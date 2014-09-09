@@ -36,7 +36,8 @@ module.exports = function(grunt) {
                 $: true,
                 define: true, 
                 requirejs: true,
-                JsSHA: true
+                JsSHA: true,
+				jade: true
             }
         },
         files: {
@@ -56,20 +57,22 @@ module.exports = function(grunt) {
     },
     copy: {
         spa: {
-            files: [
-                {
+            files: [{
                     expand: true,
                     cwd: "src/client/spa/", 
                     src: ["**/*.js"], 
                     dest: "public/js/spa/"
-                },
-                {
+                }
+			]
+		},
+		build: {
+			files: [{
                     expand: true,
                     cwd: "build/", 
                     src: ["**/*.js"], 
                     dest: "public/js/spa/"
                 }
-            ]
+			]
         }
     },
     concat: {
@@ -92,6 +95,38 @@ module.exports = function(grunt) {
             dest: "public/js/vendor/bootstrap.js"
         }
     },
+	coffee: {
+		dist: {
+			files: [{
+				expand: true,
+				cwd: "src/client/spa/",
+				src: ["**/*.coffee"],
+				dest: "build",
+				rename: function(dest, src) {
+					return dest + '/' + src.replace(/\.coffee$/, '.js');
+				}
+			}]
+		}
+	},
+	express: {
+		options: {
+		  port: 5000
+		},
+		dev: {
+		  options: {
+			script: 'server.js'
+		  }
+		}
+	},
+	watch: {
+		express: {
+			files:  "<%= coffee.dist.files[0].cwd + coffee.dist.files[0].src %>",
+			tasks:  ["coffee", "copy:build", "express:dev" ],
+			options: {
+				spawn: false // for grunt-contrib-watch v0.5.0+, "nospawn: true" for lower versions. Without this option specified express won't be reloaded
+			}
+		}
+	},
     uglify: {
         bootstrap: {
             files: {
@@ -99,17 +134,18 @@ module.exports = function(grunt) {
             }
         }
     },
-    jst: {
+	jade: {
         compile:{
             options:{
+				client: true,
                 prettify: true,
                 processName: function(longPath){
                     return longPath.substr(25);
                 }
             },
-            files:{
-                "build/templates.js": ["src/client/spa/templates/**/*.html"]
-            }
+            files: {
+              "build/templates.js": ["src/client/spa/templates/**/*.jade"]
+			}
         }
     },
     less: {
@@ -134,15 +170,66 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-less");
   grunt.loadNpmTasks("grunt-contrib-cssmin");
-  grunt.loadNpmTasks("grunt-contrib-jst");
+  grunt.loadNpmTasks("grunt-contrib-coffee");
+  grunt.loadNpmTasks("grunt-contrib-jade");
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-express-server');
 
   // Default task(s).
   grunt.registerTask(
     "default", 
     [
-      "clean:build", "jshint", "jst", "copy:spa"
+      "clean:build", "jshint", "coffee:dist", "jade", "copy:spa", "copy:build"
+    ]);
+	
+  grunt.registerTask(
+    "develop", 
+    [
+      "clean:build", "jshint", "coffee:dist", "jade", "copy:spa", "copy:build", "express:dev", "watch"
     ]);
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

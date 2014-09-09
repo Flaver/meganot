@@ -7,7 +7,7 @@ define([
 				this.app = this.options.app;
 			},
 			template: function(){
-				return window.JST["login.html"];
+				return window.JST["login.jade"];
 			},
 			events:{
 				"click button.btn.login": "login"

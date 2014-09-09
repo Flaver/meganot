@@ -2,9 +2,10 @@ define([
 	"spa/Layout",
 	"spa/Menu",
 	"spa/Hello",
+	"spa/Music",
 	"spa/Login"
 	], 
-	function(Layout, Menu, Hello, Login){
+	function(Layout, Menu, Hello, Music, Login){
 	var App = Backbone.Marionette.Application.extend({
 		init: function(){
 			this.layout = new Layout();
@@ -21,6 +22,9 @@ define([
 		},
 		showHome: function(){
 			this.layout.content.show(new Hello());
+		},
+		showMusic: function(){
+			this.layout.content.show(new Music());
 		},
 		login: function(username, password, cbError, cbSuccess){
 			var app = this,

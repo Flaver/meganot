@@ -7,7 +7,8 @@ define([
 				this.app = this.options.app;
 			},
 			template: function(){
-				return window.JST["menu.html"];
+				console.log('window', window);
+				return window.JST["menu.jade"];
 			},
 			events:{
 				"click li": "goto"
@@ -27,6 +28,9 @@ define([
 						break;
 					case "home":
 						this.app.showHome();
+						break;
+					case "music":
+						this.app.showMusic();
 						break;
 				}
 			}

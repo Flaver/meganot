@@ -1,9 +1,41 @@
 this["JST"] = this["JST"] || {};
 
-this["JST"]["hello.html"] = function(obj) {obj || (obj = {});var __t, __p = '', __e = _.escape;with (obj) {__p += '<h1>Hello App!</h1>';}return __p};
+this["JST"]["hello.jade"] = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
 
-this["JST"]["layout.html"] = function(obj) {obj || (obj = {});var __t, __p = '', __e = _.escape;with (obj) {__p += '<div class="app">\n\t<div id="menu"></div>\n\t<div id="content"></div>\n</div>';}return __p};
+buf.push("<h1>Hello App!</h1>");;return buf.join("");
+};
 
-this["JST"]["login.html"] = function(obj) {obj || (obj = {});var __t, __p = '', __e = _.escape;with (obj) {__p += '<div class="login form">\n  <div class="message">\n  </div>\n  <form class="form-horizontal">\n    <div class="control-group">\n      <label class="control-label" for="inputUsername">Username</label>\n      <div class="controls">\n        <input type="text" class="input username" id="inputUsername" placeholder="Username">\n      </div>\n    </div>\n    <div class="control-group">\n      <label class="control-label" for="inputPassword">Password</label>\n      <div class="controls">\n        <input type="password" class="input password" id="inputPassword" placeholder="Password">\n      </div>\n    </div>\n    <div class="control-group">\n      <div class="controls">\n        <button type="submit" class="btn login">Login</button>\n      </div>\n    </div>\n  </form>\n</div>';}return __p};
+this["JST"]["layout.jade"] = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
 
-this["JST"]["menu.html"] = function(obj) {obj || (obj = {});var __t, __p = '', __e = _.escape;with (obj) {__p += '<div class="navbar">\n  <div class="navbar-inner">\n    <a class="brand" href="#">User Manager</a>\n    <ul class="nav">\n      <li class="active"><a href="#home">Home</a></li>\n      <li><a href="#login">Login</a></li>\n    </ul>\n  </div>\n</div>';}return __p};
+buf.push("<div class=\"app\"><div id=\"menu\"></div><div id=\"content\"></div></div>");;return buf.join("");
+};
+
+this["JST"]["login.jade"] = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+
+buf.push("<div class=\"login form\"><div class=\"message\"></div><form class=\"form-horizontal\"><div class=\"control-group\"><label for=\"inputUsername\" class=\"control-label\">Username</label><div class=\"controls\"><input type=\"text\" id=\"inputUsername\" placeholder=\"Username\" class=\"input username\"/></div></div><div class=\"control-group\"><label for=\"inputPassword\" class=\"control-label\">Password</label><div class=\"controls\"><input type=\"password\" id=\"inputPassword\" placeholder=\"Password\" class=\"input password\"/></div></div><div class=\"control-group\"><div class=\"controls\"><button type=\"submit\" class=\"btn login\">Login</button></div></div></form></div>");;return buf.join("");
+};
+
+this["JST"]["menu.jade"] = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+
+buf.push("<div class=\"navbar\"><div class=\"navbar-inner\"><a href=\"#\" class=\"brand\">User Manager</a><ul class=\"nav\"><li class=\"active\"><a href=\"#home\">Home</a></li><li><a href=\"#music\">Music</a></li><li><a href=\"#login\">Login</a></li></ul></div></div>");;return buf.join("");
+};
+
+this["JST"]["music/main.jade"] = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+;var locals_for_with = (locals || {});(function (testvar) {
+buf.push("<h1>" + (jade.escape(null == (jade_interp = testvar) ? "" : jade_interp)) + "Music in jade2</h1>");}.call(this,"testvar" in locals_for_with?locals_for_with.testvar:typeof testvar!=="undefined"?testvar:undefined));;return buf.join("");
+};

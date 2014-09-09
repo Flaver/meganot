@@ -4,7 +4,7 @@ define([
 	function(templates){
 		var Layout = Backbone.Marionette.Layout.extend({
 		  template: function(){
-			return window.JST["layout.html"];
+			return window.JST["layout.jade"];
 		  },
 		  regions: {
 		    menu: "#menu",
