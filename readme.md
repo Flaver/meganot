@@ -44,6 +44,12 @@ To start the init application (you need [node and npm](http://nodejs.org/)) just
 
 on the base folder 
 
+## Manual run Grunt
+
+	npm install -g grunt-cli
+
+run
+	grunt
 
 ## Pushing your app to Heroku
 

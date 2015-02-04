@@ -29,7 +29,7 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("<div class=\"navbar\"><div class=\"navbar-inner\"><a href=\"#\" class=\"brand\">User Manager</a><ul class=\"nav\"><li class=\"active\"><a href=\"#home\">Home</a></li><li><a href=\"#music\">Music</a></li><li><a href=\"#login\">Login</a></li></ul></div></div>");;return buf.join("");
+buf.push("<div class=\"navbar\"><div class=\"navbar-inner\"><a href=\"#\" class=\"brand\">User Manager</a><ul class=\"nav\"><li class=\"active\"><a href=\"#/home\">Home</a></li><li><a href=\"#/music\">Music</a></li><li><a href=\"#/login\">Login</a></li></ul></div></div>");;return buf.join("");
 };
 
 this["JST"]["music/main.jade"] = function template(locals) {
