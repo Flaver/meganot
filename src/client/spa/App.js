@@ -13,6 +13,7 @@ define([
 			this.layout.menu.show(new Menu({
 				app: this
 			}));
+			console.log(112);
 			this.layout.content.show(new Hello());
 		},
 		showLoginForm: function(){
