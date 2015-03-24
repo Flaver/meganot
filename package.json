@@ -1,53 +1,53 @@
 {
-  "name": "app-name",
-  "version": "0.0.1",
-  "author": "Picanteverde <picanteverde@gmail.com>",
-  "description": "a simple description",
-  "contributors": [
-    {
-      "name": "Alejandro Hernandez",
-      "email": "picanteverde@gmail.com",
-      "web": "http://picanteverde.wordpress.com/"
-    }
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/picanteverde/init.git"
-  },
-  "keywords": [
-    "init",
-    "node",
-    "app"
-  ],
-  "dependencies": {
-    "express": "^4.11.1",
-    "mongodb": "~2.0",
-    "pg": "^4.2.0",
-    "body-parser": "^1.10.2",
-    "cookie-parser": "^1.3.3",
-    "method-override": "^2.3.1",
-    "morgan": "^1.5.1",
-    "serve-favicon": "^2.2.0",
-    "errorhandler": "^1.3.2"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-contrib-concat": "~0.5.0",
-    "grunt-contrib-uglify": "~0.7.0",
-    "grunt-contrib-less": "~1.0.0",
-    "grunt-contrib-cssmin": "~0.11.0",
-    "mocha": "~2.1.0",
-    "chai": "~1.10.0",
-    "grunt-contrib-coffee": "~0.12.0",
-    "grunt-contrib-jade": "~0.14.0",
-    "grunt-contrib-copy": "~0.7.0",
-    "grunt-contrib-clean": "~0.6.0",
-    "grunt-contrib-watch": "*",
-    "grunt-express-server": "*"
-  },
-  "license": "MIT",
-  "engines": {
-    "node": ">=0.10"
-  }
+	"name"            : "app-name",
+	"version"         : "0.0.1",
+	"author"          : "",
+	"description"     : "a simple description",
+	"contributors"    : [
+		{
+			"name"  : "",
+			"email" : "",
+			"web"   : ""
+		}
+	],
+	"repository"      : {
+		"type" : "git",
+		"url"  : ""
+	},
+	"keywords"        : [
+		"meganot",
+		"меганот",
+		"ноты"
+	],
+	"dependencies"    : {
+		"express"         : "^4.11.1",
+		"mongodb"         : "~2.0",
+		"pg"              : "^4.2.0",
+		"body-parser"     : "^1.10.2",
+		"cookie-parser"   : "^1.3.3",
+		"method-override" : "^2.3.1",
+		"morgan"          : "^1.5.1",
+		"serve-favicon"   : "^2.2.0",
+		"errorhandler"    : "^1.3.2"
+	},
+	"devDependencies" : {
+		"grunt"                : "~0.4.5",
+		"grunt-contrib-jshint" : "~0.6.4",
+		"grunt-contrib-concat" : "~0.5.0",
+		"grunt-contrib-uglify" : "~0.7.0",
+		"grunt-contrib-less"   : "~1.0.0",
+		"grunt-contrib-cssmin" : "~0.11.0",
+		"mocha"                : "~2.1.0",
+		"chai"                 : "~1.10.0",
+		"grunt-contrib-coffee" : "~0.12.0",
+		"grunt-contrib-jade"   : "~0.14.0",
+		"grunt-contrib-copy"   : "~0.7.0",
+		"grunt-contrib-clean"  : "~0.6.0",
+		"grunt-contrib-watch"  : "*",
+		"grunt-express-server" : "*"
+	},
+	"license"         : "MIT",
+	"engines"         : {
+		"node" : ">=0.10"
+	}
 }
