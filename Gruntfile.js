@@ -155,14 +155,14 @@ module.exports = function (grunt) {
 		less    : {
 			bootstrap : {
 				files : {
-					"public/css/vendor/bootstrap.css" : "src/client/styles/bootstrap/less/bootstrap.less"
+					"build/css/bootstrap.css" : "src/client/styles/bootstrap-3.3.4/less/bootstrap.less"
 				}
 			}
 		},
 		cssmin  : {
 			compress : {
 				files : {
-					"public/css/vendor/bootstrap.min.css" : ["public/css/vendor/bootstrap.css"]
+					"public/css/bootstrap.min.css" : ["build/css/bootstrap.css"]
 				}
 			}
 		}
