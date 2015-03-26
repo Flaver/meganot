@@ -1,6 +1,6 @@
 // Avoid `console` errors in browsers that lack a console.
 (function() {
-    var method;
+	var method;
     var noop = function () {};
     var methods = [
         'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
@@ -11,6 +11,7 @@
     var length = methods.length;
     var console = (window.console = window.console || {});
 
+	window.console.log(123);
     while (length--) {
         method = methods[length];
 
